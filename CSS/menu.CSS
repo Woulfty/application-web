@@ -1,6 +1,6 @@
 body {
     padding: 30px;
-    background-image: url("../../Application/");
+    background-image: url("../images/SpaceBackground.jpg");
     background-size: cover;
     background-attachment: fixed;
     margin : 0;
@@ -8,7 +8,7 @@ body {
 .menu{
     height: 60px;
     width: 100%;
-    border-radius: 15px 15px / 15px 15px;
+    border-radius: 5px 5px / 5px 5px;
     background-color: rgb(48, 48, 48);
     position: sticky;
 }
@@ -27,6 +27,14 @@ body {
     border-radius: 3px;
     border: 3px solid black;
     background-color: #707070;
-    border-radius: 10px 10px / 10px 10px;
+    border-radius: 5px 5px / 5px 5px;
     padding: 30px;
+}
+.desct{
+    width: 10%;
+    margin-top: 1%;
+    border: 3px solid black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
 }
