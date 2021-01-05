@@ -5,6 +5,7 @@
         </li>
         <li class="deroulant"><a>Actions ▼</a>
             <ul class="sous">
+                <!--barre du menu-->
                 <li><a href="jeux.php?GameName=<?php echo $_POST['GameName']="8"; ?>">Division 2</a></li>
                 <li><a href="jeux.php?GameName=<?php echo $_POST['GameName']="6"; ?>">Call of duty</a></li>
                 <li><a href="jeux.php?GameName=<?php echo $_POST['GameName']="9"; ?>">GTA</a></li>
@@ -28,6 +29,7 @@
                 <p>
                     <input type="submit" name="deco" value="Déconnexion" />
                     <?php
+                        //deconection
                         if(isset($_Post["deco"])){
                             $_SESSION["Logged"] = false;
                         }
