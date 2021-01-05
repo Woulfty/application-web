@@ -1,3 +1,6 @@
+<!--DOSSIER DE COPIE DE TRUC ET CHOSES POTENTIELLEMENT UTILES-->
+
+
 <!--jeux.php-->
 <?php
     session_start();

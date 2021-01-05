@@ -19,14 +19,15 @@ function logout() {
     <?php
         
 }
-
+//connection
 function connection($MaBase){
 
     if(isset($_POST['nom'])){
-       
+       //selection des users 
         $Result = $MaBase->query("SELECT * FROM `User` WHERE `nom`='".$_POST['nom']."' AND `MDP` = '".$_POST['MDP']."'");
         if($Result->rowCount()>0){
             $tab = $Result->fetch();
+            //si il existe et que le mot de passe correspond -> connection
             $_SESSION["Logged"] = true;
             $_SESSION["idUser"] = $tab['id'];
             
@@ -37,6 +38,7 @@ function connection($MaBase){
     }
 
     ?>
+    <!--formulaire-->
     <div id="container">
         <form action="" method="post">
                 Identifiant<input type="text" placeholder="Entrer le nom d'utilisateur" name="nom">
