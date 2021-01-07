@@ -44,7 +44,7 @@
         <div class="espace40px"></div>
         
             <!--COMMENTAIRES-->
-            <h1 class="left">Commentaires anonymes :</h1>
+            <h1 class="left">Commentaires :</h1>
             <form action="" method="post">
             <h2>Entrez votre commentaire :
             <input type="text" placeholder="Ecriver quelque-chose" name="comm">
@@ -62,14 +62,20 @@
                             echo "Une erreur est survenue.";
                         } 
                     }
-                    //selectionne tout les commentaires du jeu et les affiches
-                    $CommResult = $MaBase->query("SELECT * FROM `commentaires` WHERE `idjeux`='".$_GET['GameName']."'");
+                    //selectionne tout les commentaires du jeu et les affiches par ancienneté
+                    $CommResult = $MaBase->query("SELECT User.nom, commentaires.commentaire FROM User, commentaires 
+                                                    WHERE 
+                                                        User.id = commentaires.iduser
+                                                    AND
+                                                        commentaires.idjeux = '".$_GET['GameName']."'
+                                                    ORDER BY commentaires.id DESC");
                     While($don = $CommResult->fetch()){
                         ?>
                         <div class="comm">
                             <div class="center">
                                 <?php
-                                    echo '<h3 class="desct">'.$don['commentaire'].'</h3>';
+                                    //affiche les commentaires et le pseudo de la persone qui a posté un commentaire
+                                    echo '<h3 class="desct">'.$don['nom']. " : " .$don['commentaire'].'</h3>';
                                 ?>
                             </div>
                         </div>
